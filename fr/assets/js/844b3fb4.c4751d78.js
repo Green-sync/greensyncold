@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[259],{7257:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/greensync/fr/blog/tags/facebook","allTagsPath":"/greensync/fr/blog/tags","count":1}')}}]);

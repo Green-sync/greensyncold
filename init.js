@@ -35,23 +35,9 @@ const startProject = () => {
     console.log("Please wait while we check your pnpm version...");
     checkPNPM();
   } else {
-    const child = spawn("pnpm", [
-      "install",
-      "-w",
-      "--shamefully-hoist",
-      "&&",
-      "pnpm",
-      "start",
-    ]);
-    child.on("error", (error) => {
-      console.error(`Error starting project: ${error.message}`);
-    });
-    child.stdout.on("data", (data) => {
-      console.log(`Project started: ${data}`);
-    });
-    child.stderr.on("data", (data) => {
-      console.error(`Error starting project: ${data}`);
-    });
+    consolelog(
+      "Starting All good now you can install dependencies by using this script pnpm install '"
+    );
   }
 };
 startProject();

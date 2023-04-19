@@ -1,0 +1,22 @@
+{
+  "name": "greensync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "pnpm --filter client",
+    "server": "pnpm --filter server",
+    "doc": "pnpm --filter documentation",
+    "start": "concurrently \"pnpm doc start\"  \"pnpm server start\" \" pnpm client serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@changesets/changelog-git": "^0.1.14"
+  },
+  "devDependencies": {
+    "changesets": "^1.0.2",
+    "concurrently": "^8.0.1"
+  }
+}

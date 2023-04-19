@@ -8,7 +8,7 @@
     "api": "pnpm --filter api",
     "doc": "pnpm --filter documentation",
     "deploy:doc": "pnpm doc build && GIT_USER=mitch1009 pnpm doc pages",
-    "start": "concurrently \"pnpm doc start\"  \"pnpm server start\" \" pnpm client serve\""
+    "start": "concurrently \"pnpm doc start\"  \"pnpm api dev\" \" pnpm client start\""
   },
   "keywords": [],
   "author": "",

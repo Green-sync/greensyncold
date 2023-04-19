@@ -4,44 +4,102 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **GreenSync in less than 5 minutes**.
 
 ## Getting Started
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Get started by **Setting up your development environment**.
 
 ### What you'll need
 
 - [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- [PNPM](https://pnpm.org) version 6 or above. pnpm manages the workspace for the entire application hence the need to install it. you dont have to install it manually, there is a script -`init.js` which manages that process for you in project.
 
-## Generate a new site
+## Development
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
+Run:
 
 ```bash
-cd my-website
-npm run start
+git clone https://github.com/green-sync/greensync.git
+
+cd greensync
+
+# run this command once when you clone the repository for the first time
+node init.js
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+if all goes well you will see develpment servers starting up as follows.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+- Client application running on [http://localhost4300](localhost:4300)
+- Server application running on [http://localhost4000](localhost:4000)
+- Documentation application running on [http://localhost4100](localhost:4100)
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Essential scripts
+
+### Start all applications
+
+you can start all applications at once by running this command:
+
+```bash
+pnpm start
+```
+
+### Client application
+
+you have access to the following CLI commands:
+
+```bash
+
+# start the server
+pnpm client start
+
+## install a package
+pnpm client install [package]
+
+#build the application
+
+pnpm client build
+
+
+```
+
+### Server application
+
+you have access to the following CLI commands:
+
+```bash
+
+# start the server
+pnpm server start
+
+## install a package
+pnpm server install [package]
+
+#build the application
+
+pnpm server build
+
+
+```
+
+### Documentation Site
+
+you have access to the following CLI commands:
+
+```bash
+
+# start the server
+pnpm doc start
+
+## install a package
+pnpm doc install [package]
+
+#build the application
+
+pnpm doc build
+
+## deploy to github pages - this requires authentication hence the GIT_USER flag
+ GIT_USER:<USER_NAME> pnpm doc pages
+
+```

@@ -4,12 +4,12 @@ import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: "IoT Tools",
+    title: "Agri IoT Tools",
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Access to IoT devices/tools for easy management of farms and yield
+        predictions
       </>
     ),
   },
@@ -18,8 +18,8 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Sync All your farm data to the cloud which will help in making informed
+        decisions on the operations of the farm
       </>
     ),
   },
@@ -28,8 +28,8 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        GreenSync is easy to use and has asimple design that suits every farmer
+        or stakeholder
       </>
     ),
   },

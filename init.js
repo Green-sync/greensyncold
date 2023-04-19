@@ -4,6 +4,7 @@ exec("pnpm -v", (error, stdout, stderr) => {
   if (error) {
     console.error(`Error: ${error.message}`);
     installPNPM();
+
     return;
   }
   if (stderr) {
@@ -14,7 +15,7 @@ exec("pnpm -v", (error, stdout, stderr) => {
 });
 
 function installPNPM() {
-  exec("npm install pnpm", (error, stdout, stderr) => {
+  exec("npm install pnpm ", (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
       return;
@@ -26,3 +27,11 @@ function installPNPM() {
     console.log(`pnpm installed: ${stdout}`);
   });
 }
+
+exec(`pnpm install && pnpm start`, (stderr, stdout) => {
+  if (stderr) {
+    console.error(`Error: ${stderr}`);
+    return;
+  }
+  console.log(`strat installed: ${stdout}`);
+});

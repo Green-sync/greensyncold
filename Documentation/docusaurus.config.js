@@ -11,10 +11,10 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://green-sync.github.io",
+  url: "https://Green-sync.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/greensync/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -78,7 +78,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/green-sync/greensync",
+            href: "https://github.com/Green-sync/greensync",
             label: "GitHub",
             position: "right",
           },
@@ -118,7 +118,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/green-sync/greensync",
+                href: "https://github.com/Green-sync/greensync",
               },
             ],
           },

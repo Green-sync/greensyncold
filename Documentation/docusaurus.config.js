@@ -127,6 +127,56 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        {
+          property: "description",
+          content: "GreenSync Documentation",
+        },
+        {
+          property: "og:title",
+          content: "GreenSync",
+        },
+
+        {
+          property: "og:description",
+          content: "Documentation for GreenSync",
+        },
+
+        {
+          property: "og:type",
+          content: "website",
+        },
+
+        {
+          name: "twitter:card",
+          content: "summary",
+        },
+
+        {
+          name: "twitter:creator",
+          content: "@green_sync",
+        },
+
+        {
+          name: "twitter:title",
+          content: "GreenSync",
+        },
+
+        {
+          name: "twitter:description",
+          content: "Documentation for GreenSync",
+        },
+
+        {
+          name: "twitter:image",
+          content: "img/docusaurus-social-card.jpg",
+        },
+
+        {
+          name: "twitter:site",
+          content: "@green_sync",
+        },
+      ],
     }),
 };
 

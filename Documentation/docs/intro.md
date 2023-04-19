@@ -71,14 +71,14 @@ you have access to the following CLI commands:
 ```bash
 
 # start the server
-pnpm server start
+pnpm api start
 
 ## install a package
-pnpm server install [package]
+pnpm api install [package]
 
 #build the application
 
-pnpm server build
+pnpm api build
 
 
 ```

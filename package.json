@@ -7,7 +7,7 @@
     "client": "pnpm --filter client",
     "server": "pnpm --filter server",
     "doc": "pnpm --filter documentation",
-    "deploy:doc": "pnpm doc build &&  pnpm doc pages",
+    "deploy:doc": "pnpm doc build && GIT_USER=mitch1009 pnpm doc pages",
     "start": "concurrently \"pnpm doc start\"  \"pnpm server start\" \" pnpm client serve\""
   },
   "keywords": [],

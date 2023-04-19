@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+title: Server Application
+sidebar_position: 3
 ---
 
 ## Introduction

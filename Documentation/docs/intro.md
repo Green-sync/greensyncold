@@ -14,7 +14,7 @@ Get started by **Setting up your development environment**.
 
 - [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-- [PNPM](https://pnpm.org) version 6 or above. pnpm manages the workspace for the entire application hence the need to install it. you dont have to install it manually, there is a script -`init.js` which manages that process for you in project.
+- [PNPM](https://pnpm.io/installation) version 6 or above. pnpm manages the workspace for the entire application hence the need to install it.
 
 ## Development
 
@@ -66,12 +66,13 @@ pnpm client build
 
 ### Server application
 
-you have access to the following CLI commands:
+> IMPORTANT: Please make sure that you have set APP_ID environmental variable in .env file before running these scripts. there is a sample `env` file in the application find it at .env.example
+> you have access to the following CLI commands:
 
 ```bash
 
 # start the server
-pnpm api start
+pnpm api dev
 
 ## install a package
 pnpm api install [package]

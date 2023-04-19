@@ -66,8 +66,7 @@ pnpm client build
 
 ### Server application
 
-> IMPORTANT: Please make sure that you have set APP_ID environmental variable in .env file before running these scripts. there is a sample `env` file in the application find it at .env.example
-> you have access to the following CLI commands:
+> IMPORTANT: Before running these scripts, ensure that you have set the `APP_ID` environmental variable in the `.env` file. You can find a sample env file in the application at `.env.example`.
 
 ```bash
 

@@ -35,7 +35,7 @@ const startProject = () => {
     console.log("Please wait while we check your pnpm version...");
     checkPNPM();
   } else {
-    consolelog(
+    console.log(
       "Starting All good now you can install dependencies by using this script pnpm install '"
     );
   }

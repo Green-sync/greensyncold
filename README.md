@@ -4,7 +4,7 @@
 
 ## Introduction:
 
-GreenSync is an application developed by the Github organization, GreenSync, to help farmers manage their farms. The application has several functionalities that enable farmers to track their crops and livestock, record weather conditions, and manage their farm inventory. This documentation provides an overview of the application and how to use it.
+ GreenSync aims to help farmers manage their farms. The application has several functionalities that enable farmers to track their crops and livestock, record weather conditions, and manage their farm inventory. This documentation provides an overview of the application and how to use it.
 
 ## Functionality:
 

@@ -1,5 +1,6 @@
 const { spawn } = require("child_process");
 let pnpmVersion;
+const fs = require("fs");
 let pnpmInstalled;
 const checkPNPM = () => {
   const child = spawn("pnpm", ["-v"]);
@@ -35,6 +36,15 @@ const startProject = () => {
     console.log("Please wait while we check your pnpm version...");
     checkPNPM();
   } else {
+    fs.readFile("Applications/client/.env.example", "utf8", (err, data) => {
+      if (err) throw err;
+      fs.writeFile("Applications/client/.env", data, (err) => {
+        if (err) throw err;
+        console.log(
+          ".env file has been created with the contents of .env.example"
+        );
+      });
+    });
     console.log(
       "Starting All good now you can install dependencies by using this script pnpm install '"
     );

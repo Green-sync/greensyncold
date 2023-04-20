@@ -27,13 +27,16 @@ cd greensync
 
 # run this command once when you clone the repository for the first time
 node init.js
+
+# do this the first time you clone the repository
+.env.example > .env
 ```
 
 if all goes well you will see develpment servers starting up as follows.
 
-- Client application running on [http://localhost4300](localhost:4300)
-- Server application running on [http://localhost4000](localhost:4000)
-- Documentation application running on [http://localhost4100](localhost:4100)
+- Client application running on [http://localhost:4300](localhost:4300)
+- Server application running on [http://localhost:5001](localhost:4000)
+- Documentation application running on [http://localhost:4100](localhost:4100)
 
 ## Essential scripts
 

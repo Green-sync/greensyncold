@@ -2,7 +2,7 @@
   "name": "api",
   "description": "AgriSync server",
   "scripts": {
-    "dev": "firebase emulators:start --only functions",
+    "dev": "firebase emulators:start --only functions,auth,firestore",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",

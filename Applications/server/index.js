@@ -17,7 +17,5 @@ const startServer = async () => {
   await server.start();
   app.use("/", cors(), express.json(), expressMiddleware(server));
 };
-
-startServer().then(() => {
-  exports.greensync = functions.https.onRequest(app);
-});
+startServer().then(() => {});
+exports.greensync = functions.https.onRequest(app);

@@ -31,4 +31,4 @@ GreenSync will follow an agile development process with sprints of two weeks. Ea
 
 ## Conclusion
 
-GreenSync is an application that helps farmers manage their farms. With the addition of field mapping, pest and disease detection, marketplace, and mobile app, GreenSync will continue to provide value to farmers. The development process will follow an agile approach, with regular testing and bug fixes to ensure the stability and reliability of the application.
+GreenSync is an application that helps farmers manage their farms. With the addition of field mapping, pest and disease detection, marketplace, and mobile app, GreenSync will continue to provide value to farmers. The development process will follow an agile approach, with regular testing and bug fixes to ensure the stability and reliability of the application You are welcome.

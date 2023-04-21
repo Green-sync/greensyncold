@@ -9,6 +9,10 @@ GreenSync is an application that helps farmers manage their farms. This roadmap 
 ## Current State
 
 GreenSync is currently in the development phase of providing farmers with functionalities to track their crops and livestock, record weather conditions, manage farm inventory, and manage user accounts. The frontend application is being built using React, while the backend application is being developed with Node.js. The applications will communicate with each other using GraphQL APIs. We will also be utilizing additional packages for data visualization, authentication, and database management.
+here is a breakdown of tasks at hand:
+
+- React Website
+- GraphQL API
 
 ## Future Plans
 

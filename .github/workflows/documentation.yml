@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting on PR
 on: 
   push:
     paths:
-     - "Documentation"
+     - "/Documentation/**"
   pull_request:
    types:
      - "closed"

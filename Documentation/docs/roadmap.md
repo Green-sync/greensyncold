@@ -22,6 +22,7 @@ GreenSync plans to add the following features:
 - **Pest and Disease Detection**: GreenSync will leverage machine learning to detect and predict pests and diseases in crops and livestock. This will help farmers take timely action to prevent losses.
 - **Marketplace**: GreenSync will provide farmers with a marketplace to buy and sell their products. This will enable farmers to expand their customer base and increase their profits.
 - **Mobile App**: GreenSync will develop a mobile application to enable farmers to manage their farms on-the-go. The mobile app will allow farmers to record data even when they are not at their farm.
+- **IoT devices**: GreenSync will develop and distribute IoT devices.
 
 ## Development Process
 

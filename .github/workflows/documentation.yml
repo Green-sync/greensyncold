@@ -1,11 +1,8 @@
 name: Deploy Documentation
 on:
   push:
-    paths:
-      - "!Applications/*"
-      - "!DevOps/*"
-      - "!Packages/*"
-      - "Documentation/*"
+    branches:
+      - "main"
   pull_request:
     types:
       - "closed"

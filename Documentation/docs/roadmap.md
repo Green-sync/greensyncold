@@ -23,6 +23,7 @@ GreenSync plans to add the following features:
 - **Marketplace**: GreenSync will provide farmers with a marketplace to buy and sell their products. This will enable farmers to expand their customer base and increase their profits.
 - **Mobile App**: GreenSync will develop a mobile application to enable farmers to manage their farms on-the-go. The mobile app will allow farmers to record data even when they are not at their farm.
 - **IoT devices**: GreenSync will develop and distribute IoT devices.
+- **Agri Researcher**: GreenSync will provide reasearch services to formers.
 
 ## Development Process
 

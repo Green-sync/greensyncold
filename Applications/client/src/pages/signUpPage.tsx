@@ -1,5 +1,7 @@
-
+import {getAuth} from "firebase/auth"
 export const  SignUp = ()=> {
+const auth = getAuth();
+
     return (
       <>
         

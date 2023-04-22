@@ -1,14 +1,16 @@
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
   createUserWithEmailAndPassword,
-  getAuth,
 } from "firebase/auth";
 import { SocialProviders } from "./firebaseInterfaces";
+import auth from "../utils";
 
-const auth = getAuth();
+// const auth = getAuth();
 
-const LoginnWithEmailAndPassword = async (data: any) => {
+const LoginnWithEmailAndPassword = async (data: any, auth) => {
   // {email, password, fullname}
   try {
     const { email, password } = data;
@@ -18,7 +20,7 @@ const LoginnWithEmailAndPassword = async (data: any) => {
     return false;
   }
 };
-const RegisterWithEmailAndPassword = async (data: any) => {
+const RegisterWithEmailAndPassword = async (data: any, auth: any) => {
   // {email, password, fullname}
   try {
     const { email, password } = data;
@@ -30,9 +32,13 @@ const RegisterWithEmailAndPassword = async (data: any) => {
   }
 };
 // union type
-const SocialLogin = async (provider: SocialProviders) => {
+const SocialLogin = async (provider: SocialProviders,auth:any) => {
   // TODO: implement this method
-  // await signInWithPopup();
+  const providers = {
+    google: new GoogleAuthProvider(),
+    facebook: new FacebookAuthProvider(),
+  }
+  await signInWithPopup(auth, providers[provider as SocialProviders]);
 };
 
-export { LoginnWithEmailAndPassword, RegisterWithEmailAndPassword };
+export { LoginnWithEmailAndPassword, RegisterWithEmailAndPassword, SocialLogin };

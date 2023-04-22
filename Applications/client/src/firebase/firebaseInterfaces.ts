@@ -11,4 +11,4 @@ export interface Socials{
 }
 
 
-export declare type SocialProviders = "google" | "facebook" | "microsoft"
+export declare type SocialProviders = "google" | "facebook" 

@@ -3,8 +3,9 @@ import ErrorPage from "./pages/errorPage"
 import LoginPage from "./pages/loginPage"
 import DashboardPage from "./pages/dashboard"
 import { SignUp } from "./pages/signUpPage"
+import {env} from "./utils"
 function App() {
-
+console.log(env)
   return (
     <>
 <Routes>

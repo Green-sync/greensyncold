@@ -10,8 +10,8 @@ type Crop {
     dateCreated: String!
   }
 input CropInput {
-    farmId: ID!
-    userId: ID!
+    farmId: ID
+    userId: ID
     type: String!
     stage: String!
     plantingDate: String!

@@ -7,21 +7,38 @@ import express from "express"
 import cors from "cors"
 const greensyncApp = express()
 import { expressMiddleware} from "@apollo/server/express4"
+import { db } from "./utils";
 const resolvers = {
     Query: {
         hello: ()=> "Hello World"
     }
 }
 const typeDefs = `#graphql
+
 type Query {
     hello: String
+
 }
 `
 
+interface GreenContext {
+    db?: any
+    token?: String
+    user?: any
+}
+
 const greenApp = async () => {
-    const server = new ApolloServer({
+    const server = new ApolloServer<GreenContext>({
         typeDefs,
         resolvers,
+        // @ts-ignore
+        context: async ({req}: any) =>{
+            console.log(req)
+            return {
+                db,
+                user: {}
+            }
+        }
     })
     await server.start()
     greensyncApp.use("/", cors(), express.json(), expressMiddleware(server))

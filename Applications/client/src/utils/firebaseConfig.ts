@@ -19,10 +19,11 @@ export const firebaseConfig = {
 
 
 
-export const app = initializeApp(firebaseConfig)
-export const auth = getAuth()
-export const storage = getStorage(app)
+const app = initializeApp(firebaseConfig)
+const auth = getAuth(app)
+const storage = getStorage(app)
 
+export {app, auth, storage};
 if (!env.DEV) {
     const auth = getAuth();
     connectAuthEmulator(auth, "http://localhost:9099");

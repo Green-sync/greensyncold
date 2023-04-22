@@ -6,11 +6,11 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { SocialProviders } from "./firebaseInterfaces";
-import auth from "../utils";
+import {auth} from "../utils";
 
 // const auth = getAuth();
 
-const LoginnWithEmailAndPassword = async (data: any, auth) => {
+const LoginnWithEmailAndPassword = async (data: any, auth: any) => {
   // {email, password, fullname}
   try {
     const { email, password } = data;

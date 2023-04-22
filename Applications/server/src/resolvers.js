@@ -1,8 +1,11 @@
-const resolvers = {
-  Query: {
-    hello() {
-      return "Hello world!";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.resolvers = void 0;
+exports.resolvers = {
+    Query: {
+        hello() {
+            return "Hello world!";
+        },
     },
-  },
 };
-module.exports = resolvers;
+//# sourceMappingURL=resolvers.js.map

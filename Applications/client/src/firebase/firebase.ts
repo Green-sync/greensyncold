@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
 } from "firebase/auth";
+import { SocialProviders } from "./firebaseInterfaces";
 
 const auth = getAuth();
 

@@ -8,9 +8,10 @@ import cors from "cors"
 const greensyncApp = express()
 import { expressMiddleware} from "@apollo/server/express4"
 import { db } from "./utils";
+import {QueryResolvers} from "./resolvers"
 const resolvers = {
     Query: {
-        hello: ()=> "Hello World"
+        ...QueryResolvers
     }
 }
 const typeDefs = `#graphql

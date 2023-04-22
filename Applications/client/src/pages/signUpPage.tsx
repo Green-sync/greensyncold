@@ -1,4 +1,3 @@
-import {getAuth} from "firebase/auth"
 import {CreateUserAccount, UserDetails} from "../firebase"
 import { useState } from "react"
 
@@ -31,7 +30,6 @@ export const  SignUp = ()=> {
     setUserData({...userData}); 
   };
 
-  console.log(userData)
     return (
       <>
         
@@ -45,7 +43,9 @@ export const  SignUp = ()=> {
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
             <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-              <form className="space-y-6">
+              <form className="space-y-6" 
+               onSubmit={() => CreateUserAccount(userData)}
+              >
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium leading-6 text-gray-900">
                     Last Name
@@ -57,7 +57,7 @@ export const  SignUp = ()=> {
                       type="text"
                       autoComplete="Last Name"
                       onChange={handleLastName}
-                      value={""}
+                      value={userData.lastName}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -74,7 +74,7 @@ export const  SignUp = ()=> {
                       type="text"
                       autoComplete="firstName"
                       onChange={handleFirstName}
-                      value={""}
+                      value={userData.firstName}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -91,7 +91,7 @@ export const  SignUp = ()=> {
                       type="email"
                       autoComplete="email"
                       onChange={handleEmail}
-                      value={""}
+                      value={userData.email}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -109,7 +109,7 @@ export const  SignUp = ()=> {
                       type="password"
                       autoComplete="current-password"
                       onChange={handlePassword}
-                      value={""}
+                      value={userData.password}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />

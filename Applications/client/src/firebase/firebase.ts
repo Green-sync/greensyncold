@@ -20,18 +20,7 @@ const LoginnWithEmailAndPassword = async (data: UserDetails, auth: any) => {
     return error;
   }
 };
-const RegisterWithEmailAndPassword = async (data: UserDetails, auth: any) => {
-  // {email, password, fullname}
-  try {
-    const { email, password } = data;
-    const userRef = await createUserWithEmailAndPassword(auth, email, password);
-    // userRef.
-    console.log(userRef)
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
+
 // union type
 const SocialLogin = async (provider: SocialProviders,auth:any) => {
   // TODO: implement this method
@@ -48,13 +37,13 @@ const CreateUserAccount = async (data: UserDetails) => {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
       })
-      console.log("Created" + data)
+      // console.log("Created" + data)
     return true
   } catch (error) {
     return error;
   }
 }
 
-export { LoginnWithEmailAndPassword, RegisterWithEmailAndPassword, SocialLogin, CreateUserAccount };
+export { LoginnWithEmailAndPassword, SocialLogin, CreateUserAccount };

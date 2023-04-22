@@ -5,28 +5,28 @@ import {
   FacebookAuthProvider,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { SocialProviders } from "./firebaseInterfaces";
+import { SocialProviders, UserDetails } from "./firebaseInterfaces";
 import {auth} from "../utils";
 
 // const auth = getAuth();
 
-const LoginnWithEmailAndPassword = async (data: any, auth: any) => {
+const LoginnWithEmailAndPassword = async (data: UserDetails, auth: any) => {
   // {email, password, fullname}
   try {
     const { email, password } = data;
     await signInWithEmailAndPassword(auth, email, password);
-    console.log("in...........")
     return true;
   } catch (error) {
     return error;
   }
 };
-const RegisterWithEmailAndPassword = async (data: any, auth: any) => {
+const RegisterWithEmailAndPassword = async (data: UserDetails, auth: any) => {
   // {email, password, fullname}
   try {
     const { email, password } = data;
     const userRef = await createUserWithEmailAndPassword(auth, email, password);
     // userRef.
+    console.log(userRef)
     return true;
   } catch (error) {
     return false;

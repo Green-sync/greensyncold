@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { SocialProviders, UserDetails } from "./firebaseInterfaces";
 import {auth} from "../utils";
+import firebase from 'firebase/app';
 
 // const auth = getAuth();
 
@@ -33,13 +34,22 @@ const SocialLogin = async (provider: SocialProviders,auth:any) => {
 
 const CreateUserAccount = async (data: UserDetails) => {
   try {
-    const {email, password} = data;
+    const {email, password, firstName, lastName, farmType } = data;
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        // console.log(user);
+        // const uid = user.uid;
+
+        // // Add more data to the user in the Realtime Database
+        // const databaseRef = firebase.database().ref(``);
+        // const userData = { email, firstName, lastName, farmType };
+        // databaseRef.set(userData);
+
+        // console.log('User signed up:', user);
       })
-      // console.log("Created" + data)
+      .catch((error) => {
+        console.error('Error signing up:', error);
+      });
     return true
   } catch (error) {
     return error;

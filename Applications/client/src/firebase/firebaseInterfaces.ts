@@ -3,6 +3,7 @@ export interface UserDetails{
     password: string;
     lastName: string;
     firstName: string;
+    farmType: string;
 }
 
 export interface Socials{

@@ -1,10 +1,37 @@
 import {getAuth} from "firebase/auth"
-import {CreateUserAccount} from "../firebase"
+import {CreateUserAccount, UserDetails} from "../firebase"
+import { useState } from "react"
 
 
 export const  SignUp = ()=> {
+  const [userData, setUserData] = useState({} as UserDetails)
 
+  const handleEmail = (e: any) => {
+    userData["email"] = e.target.value;
+    setUserData({...userData}); 
+  };
 
+  const handlePassword = (e: any) => {
+    userData["password"] = e.target.value;
+    setUserData({...userData}); 
+  };
+
+  const handleLastName = (e: any) => {
+    userData["lastName"] = e.target.value;
+    setUserData({...userData}); 
+  };
+
+  const handleFirstName = (e: any) => {
+    userData["firstName"] = e.target.value;
+    setUserData({...userData}); 
+  };
+
+  const handleFarmerType = (e: any) => {
+    userData["farmType"] = e.target.value;
+    setUserData({...userData}); 
+  };
+
+  console.log(userData)
     return (
       <>
         
@@ -29,7 +56,7 @@ export const  SignUp = ()=> {
                       name="lastName"
                       type="text"
                       autoComplete="Last Name"
-                      onChange={() => ""}
+                      onChange={handleLastName}
                       value={""}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -46,7 +73,7 @@ export const  SignUp = ()=> {
                       name="firstName"
                       type="text"
                       autoComplete="firstName"
-                      onChange={() => ""}
+                      onChange={handleFirstName}
                       value={""}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -63,7 +90,7 @@ export const  SignUp = ()=> {
                       name="email"
                       type="email"
                       autoComplete="email"
-                      onChange={() => ""}
+                      onChange={handleEmail}
                       value={""}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -81,7 +108,7 @@ export const  SignUp = ()=> {
                       name="password"
                       type="password"
                       autoComplete="current-password"
-                      onChange={() => ""}
+                      onChange={handlePassword}
                       value={""}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -94,6 +121,7 @@ export const  SignUp = ()=> {
                       </label>
                       <div className="mt-2 w-full">
                       <select name="farmingType" id="farmingType" 
+                      onChange={handleFarmerType}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                           <option value="crops">Crops</option>
                           <option value="livestock">LiveStock</option>

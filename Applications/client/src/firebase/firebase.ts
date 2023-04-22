@@ -50,7 +50,7 @@ const CreateUserAccount = async (data: UserDetails) => {
         const user = userCredential.user;
         console.log(user);
       })
-      console.log("Created")
+      console.log("Created" + data)
     return true
   } catch (error) {
     return error;

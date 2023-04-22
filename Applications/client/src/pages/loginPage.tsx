@@ -1,37 +1,24 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-// import {getAuth} from "firebase/auth"
 
-
-import {SocialLogin} from "../firebase"
+import { useState } from "react";
+import {SocialLogin, UserDetails} from "../firebase"
 import {LoginnWithEmailAndPassword} from "../firebase"
-const env = import.meta.env;
 import {auth} from "../utils";
-// const auth = getAuth();
-console.log(env)
+
 export default function SignIn() {
+  const [userData, setUserData] = useState({} as UserDetails);
+
+    const handleEmail = (e: any) => {
+      userData["email"] = e.target.value;
+      setUserData({...userData}); 
+    };
+
+    const handlePassword = (e: any) => {
+      userData["password"] = e.target.value;
+      setUserData({...userData}); 
+    };
+
     return (
       <>
-        {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full bg-white">
-          <body class="h-full">
-          ```
-        */}
         <div className="flex min-h-full flex-1">
           <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -54,7 +41,9 @@ export default function SignIn() {
   
               <div className="mt-10">
                 <div>
-                  <form action="#" method="POST" className="space-y-6">
+                  <form className="space-y-6" 
+                  onSubmit={() => LoginnWithEmailAndPassword(userData, auth)} 
+                  >
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                         Email address
@@ -66,6 +55,8 @@ export default function SignIn() {
                           type="email"
                           autoComplete="email"
                           required
+                          onChange={handleEmail}
+                          value={userData.email}
                           className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                       </div>
@@ -82,6 +73,8 @@ export default function SignIn() {
                           type="password"
                           autoComplete="current-password"
                           required
+                          onChange={handlePassword}
+                          value={userData.password}
                           className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                       </div>
@@ -109,8 +102,7 @@ export default function SignIn() {
   
                     <div>
                       <button
-                        type="button"
-                        onClick={() => LoginnWithEmailAndPassword("name", auth)} 
+                        type="submit"
                         className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       >
                         Sign in

@@ -15,9 +15,10 @@ const LoginnWithEmailAndPassword = async (data: any, auth: any) => {
   try {
     const { email, password } = data;
     await signInWithEmailAndPassword(auth, email, password);
+    console.log("in...........")
     return true;
   } catch (error) {
-    return false;
+    return error;
   }
 };
 const RegisterWithEmailAndPassword = async (data: any, auth: any) => {

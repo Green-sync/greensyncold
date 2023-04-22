@@ -1,0 +1,17 @@
+type User {
+    userId: ID!
+    email: String!
+    displayName: String!
+    profileImageURL: String
+    role: String!
+    dateCreated: String!
+  }
+
+  input UserInput {
+    userId: ID!
+    email: String!
+    displayName: String!
+    profileImageURL: String
+    role: String!
+    dateCreated: String!
+  }

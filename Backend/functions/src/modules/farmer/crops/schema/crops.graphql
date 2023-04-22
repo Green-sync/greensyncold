@@ -22,11 +22,11 @@ type CroRresponse {
   success: Boolean
   message: String
 }
-  extend Query {
-    getCrops: [Crop]
+  extend type Query {
+    getCrop: CroRresponse
   }
 
-  extend Mutation {
+  extend type  Mutation {
     createCrop(crop: CropInput): CroRresponse
   }
 

@@ -1,26 +1,21 @@
 import * as functions from "firebase-functions";
 import { ApolloServer} from "@apollo/server"
-// // Start writing functions
-// // https://firebase.google.com/docs/functions/typescript
-//
 import express from "express"
 import cors from "cors"
 const greensyncApp = express()
 import { expressMiddleware} from "@apollo/server/express4"
 import { db } from "./utils";
-import {QueryResolvers} from "./resolvers"
+import {QueryResolvers, MutationResolver} from "./resolvers"
+import { MainSchema } from "./schema";
 const resolvers = {
     Query: {
         ...QueryResolvers
+    },
+    Mutation: {
+        ...MutationResolver
     }
 }
-const typeDefs = `#graphql
 
-type Query {
-    hello: String
-
-}
-`
 
 interface GreenContext {
     db?: any
@@ -30,7 +25,7 @@ interface GreenContext {
 
 const greenApp = async () => {
     const server = new ApolloServer<GreenContext>({
-        typeDefs,
+        typeDefs: MainSchema,
         resolvers,
         // @ts-ignore
         context: async ({req}: any) =>{

@@ -1,5 +1,7 @@
 // import { db } from "../utils";
 
+import { CropsQueryResolver } from "../modules";
+
 // const resolvers = {
 //     Query: {
 //         // Define your query resolvers here
@@ -125,4 +127,5 @@
 // }
 
 export const QueryResolvers = {
+    ...CropsQueryResolver
 }

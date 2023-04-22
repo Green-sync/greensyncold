@@ -1,5 +1,4 @@
+import { CropsMutationResolver} from "../modules"
 export const MutationResolver = {
-    Mutation: {
-        
-    }
+    ...CropsMutationResolver
 }

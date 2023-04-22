@@ -42,4 +42,19 @@ const SocialLogin = async (provider: SocialProviders,auth:any) => {
   await signInWithPopup(auth, providers[provider as SocialProviders]);
 };
 
-export { LoginnWithEmailAndPassword, RegisterWithEmailAndPassword, SocialLogin };
+const CreateUserAccount = async (data: UserDetails) => {
+  try {
+    const {email, password} = data;
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      console.log("Created")
+    return true
+  } catch (error) {
+    return error;
+  }
+}
+
+export { LoginnWithEmailAndPassword, RegisterWithEmailAndPassword, SocialLogin, CreateUserAccount };

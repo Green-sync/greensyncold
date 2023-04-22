@@ -2,4 +2,4 @@ packages:
  - "DevOps/*"
  - "Packages/*"
  - "Applications/*"
- - "Documentation"
+ - "Backend/**"

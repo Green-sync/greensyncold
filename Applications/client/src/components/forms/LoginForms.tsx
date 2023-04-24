@@ -4,7 +4,7 @@ import {LoginnWithEmailAndPassword} from "../../firebase"
 import { CreateUserAccount, SocialLogin, UserDetails } from "../../firebase";
 
 export default function LoginForms() {
-    const [signInType, setSignInType] = useState(false)
+    const [signInType, setSignInType] = useState("Login")
   const [userData, setUserData] = useState({} as UserDetails);
 
     const handleEmail = (e: any) => {
@@ -38,12 +38,13 @@ export default function LoginForms() {
           <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div className="mx-auto w-full max-w-sm lg:w-96">
                 <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                  Sign in to your account
+                  Sign {signInType === "Login" ? " Up" : " In"} to your account
                 </h2>
 
               <div className="mt-10">
                 <div>
-                  <form  className={signInType  ? "space-y-6" : 'hidden'}
+{/* =======================================================LOGIN==================================================================== */}
+                  <form  className={signInType == "Login" ? 'hidden' : "space-y-6"}
                   onSubmit={() => LoginnWithEmailAndPassword(userData)} 
                   >
                     <div>
@@ -96,13 +97,13 @@ export default function LoginForms() {
                       >
                         Sign in
                       </button>
-                      <div className="text-sm leading-6" onClick={() => setSignInType(false)}>
+                      <div className="text-sm leading-6" onClick={() => setSignInType("Login")}>
                       <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >New here? Create Account</a>
                       </div>
                   </form>
                 </div>
-{/* ============================================================================================================================================== */}
-              <form className={signInType  ?  'hidden' : "space-y-6"} 
+{/* =============================================================REGISTER================================================================================= */}
+              <form className={signInType == "Register" ?  'hidden' : "space-y-6"} 
                onSubmit={() => CreateUserAccount(userData)}
               >
                 <div>
@@ -204,12 +205,12 @@ export default function LoginForms() {
                   >
                     SignUp
                   </button>
-                  <div className="text-sm leading-6" onClick={() => setSignInType(true)}>
-                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >Have an Account? SignIn</a>
+                  <div className="text-sm leading-6" onClick={() => setSignInType("Register")}>
+                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >Have an Account? Sign In</a>
                       </div>
                 </div>
               </form>
-  
+ {/* ===========================================SOCIALS=============================================================================================================================================  */}
               <div>
                 <div className="relative mt-10">
                   <div className="absolute inset-0 flex items-center" aria-hidden="true">
@@ -243,6 +244,13 @@ export default function LoginForms() {
             </div>
             </div>
             </div>
-            </div>
-            </>
+            <div className="relative hidden w-0 flex-1 lg:block">
+            <img
+              className="absolute inset-0 h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80"
+              alt=""
+            />
+          </div>
+          </div>
+        </>
     ) }

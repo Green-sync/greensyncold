@@ -36,8 +36,12 @@ export default function LoginForms() {
     const authenticate = async (e: any) => {
       e.preventDefault()
       const [option,provider] = e.target.id.split(',')
+      const userData = e.target.value; 
       if(option ==="social"){
         const isloggedIn=  await SocialLogin(provider)
+        return isloggedIn ? nav("/"): null
+      } else {
+        const isloggedIn= await LoginnWithEmailAndPassword(userData)
         return isloggedIn ? nav("/"): null
       }
 
@@ -55,8 +59,8 @@ export default function LoginForms() {
               <div className="mt-10">
                 <div>
 {/* =======================================================LOGIN==================================================================== */}
-                  <form  className={signInType == "Login" ?  "space-y-6" : 'hidden' }
-                  onSubmit={() => LoginnWithEmailAndPassword(userData)} 
+                  <form id="custom, " className={signInType == "Login" ?  "space-y-6" : 'hidden' }
+                  onSubmit={authenticate} 
                   >
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">

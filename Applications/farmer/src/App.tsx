@@ -1,17 +1,20 @@
 import { Routes, Route} from "react-router-dom"
 import ErrorPage from "./pages/errorPage"
-import LoginPage from "./pages/loginPage"
 import DashboardPage from "./pages/dashboard"
 import {env} from "./utils"
-import LoginComponent from "./components/authentication/loginComponent"
 import LoginForms from "./components/forms/LoginForms"
+import { RouteGuard } from "./components/authentication/auth.guard"
 function App() {
 console.log(env)
   return (
     <>
 <Routes>
+  <Route index path="/" element={
+    <RouteGuard>
+      <DashboardPage/>
+    </RouteGuard>
+  }/>
   <Route path="/signIn" element={<LoginForms />} />
-  <Route path="/dashboard" element={<DashboardPage/>}/>
   <Route path="*" element={<ErrorPage/>}/>
 </Routes>
     </>

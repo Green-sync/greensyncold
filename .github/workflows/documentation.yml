@@ -1,25 +1,24 @@
-
-name: Deploy to Firebase Hosting on PR
-on: 
+name: Deploy Documentation
+on:
   push:
-    paths:
-     - "Documentation"
+    branches:
+      - "main"
   pull_request:
-   types:
-     - "closed"
-   paths:
-    - "Documentation/*"   
+    types:
+      - "closed"
+    paths:
+      - "Documentation/*"
 
-  
 jobs:
   build_and_preview:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    # if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: pnpm doc build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GREENSYNC_ZA }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_GREENSYNC_ZA }}"
           projectId: greensync-za
+          chanel: live

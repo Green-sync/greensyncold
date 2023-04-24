@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "firebase emulators:start --only functions,auth,firestore",
     "shell": "firebase functions:shell",
+    "watch": "tsc -w",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
@@ -22,7 +23,9 @@
     "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
-    "firebase-functions-test": "^3.0.0"
+    "@types/node": "^18.15.13",
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^5.0.2"
   },
   "private": true
 }

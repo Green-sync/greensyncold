@@ -1,0 +1,10 @@
+type Livestock {
+    livestockId: ID!
+    farmId: ID!
+    userId: ID!
+    type: String!
+    quantity: Int!
+    healthStatus: String!
+    location: String!
+    dateCreated: String!
+}

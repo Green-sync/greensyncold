@@ -19,6 +19,3 @@ console.log(env)
 </Routes>
     </>
   )
-}
-
-export default App

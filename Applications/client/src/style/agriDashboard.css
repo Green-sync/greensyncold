@@ -1,0 +1,11 @@
+/* src/styles/agricultural.css */
+
+:root {
+    --sidebar-bg: #18230d;
+    --sidebar-text: #f5f5f5;
+    --sidebar-active-bg: #3b4c2d;
+    --sidebar-active-text: #f5f5f5;
+    --sidebar-hover-bg: #314020;
+    --sidebar-hover-text: #f5f5f5;
+  }
+  

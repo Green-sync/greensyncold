@@ -1,0 +1,36 @@
+type Farm {
+    farmId: ID!
+    userId: ID!
+    name: String!
+    location: String!
+    size: Float!
+    description: String
+    dateCreated: String!
+}
+
+input FarmInput {
+    farmId: ID
+    userId: ID
+    name: String
+    location: String
+    size: Float!
+    description: String
+    dateCreated: String
+}
+
+
+
+type FarmResponse {
+    success: Boolean
+    message: String
+}
+extend type Query {
+    getFarm: [Farm]
+}
+
+extend type Mutation {
+    createFarm(farm: FarmInput): FarmResponse
+}
+
+
+

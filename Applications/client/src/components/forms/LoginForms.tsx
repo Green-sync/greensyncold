@@ -90,16 +90,15 @@ export default function LoginForms() {
                         </a>
                       </div>
                     </div>
-  
-                    <div>
                       <button
                         type="submit"
                         className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       >
                         Sign in
                       </button>
-                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" onClick={() => setSignInType(true)}>New here? Create Account</a>
-                    </div>
+                      <div className="text-sm leading-6" onClick={() => setSignInType(false)}>
+                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >New here? Create Account</a>
+                      </div>
                   </form>
                 </div>
 {/* ============================================================================================================================================== */}
@@ -205,6 +204,9 @@ export default function LoginForms() {
                   >
                     SignUp
                   </button>
+                  <div className="text-sm leading-6" onClick={() => setSignInType(true)}>
+                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >Have an Account? SignIn</a>
+                      </div>
                 </div>
               </form>
   

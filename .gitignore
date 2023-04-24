@@ -1,4 +1,6 @@
 node_modules
 .firebase
 .env
+lib/*
+lib/
 agritech-project-cf36d-firebase-adminsdk-tushv-f181b44096.json

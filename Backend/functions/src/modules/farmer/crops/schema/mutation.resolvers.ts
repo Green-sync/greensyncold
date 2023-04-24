@@ -5,5 +5,5 @@ export const CropsMutationResolver = {
 
         return CropsService.addCrop(arg.crop);
      },
-    
+      
 }

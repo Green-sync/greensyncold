@@ -1,4 +1,4 @@
-import { CropsMutationResolver} from "../modules"
+
 import { StockMutationResolver } from "../modules"
 import { FarmMutationResolver } from "../modules/farmer/farm"
 export const MutationResolver = {
@@ -6,5 +6,4 @@ export const MutationResolver = {
     ...StockMutationResolver,
     ...FarmMutationResolver
 }
-
 

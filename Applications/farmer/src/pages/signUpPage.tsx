@@ -2,8 +2,9 @@ import {CreateUserAccount, UserDetails} from "../firebase"
 import { useState } from "react"
 
 
-export const  SignUp = ()=> {
+export const  SignUp = (toggleComponent: any)=> {
   const [userData, setUserData] = useState({} as UserDetails)
+
 
   const handleEmail = (e: any) => {
     userData["email"] = e.target.value;
@@ -193,7 +194,7 @@ export const  SignUp = ()=> {
   
             <p className="mt-10 text-center text-sm text-gray-500">
               Have an Account?{' '}
-              <a href="/" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              <a onClick={toggleComponent} className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                 Click here to sign in
               </a>
             </p>

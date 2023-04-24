@@ -4,7 +4,7 @@ import {SocialLogin, UserDetails} from "../firebase"
 import {LoginnWithEmailAndPassword} from "../firebase"
 import {auth} from "../utils";
 
-export default function SignIn() {
+export default function SignIn(toggleComponent: any) {
   const [userData, setUserData] = useState({} as UserDetails);
 
     const handleEmail = (e: any) => {
@@ -97,7 +97,7 @@ export default function SignIn() {
                     </div>
                   </form>
                 </div>
-                <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" href="/signUp">New here? Create Account</a>
+                <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" onClick={toggleComponent}>New here? Create Account</a>
                 <div className="mt-10">
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center" aria-hidden="true">

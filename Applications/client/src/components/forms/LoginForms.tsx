@@ -38,13 +38,13 @@ export default function LoginForms() {
           <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div className="mx-auto w-full max-w-sm lg:w-96">
                 <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                  Sign {signInType === "Login" ? " Up" : " In"} to your account
+                  Sign {signInType === "Login" ? " In" : " Up"} to your account
                 </h2>
 
               <div className="mt-10">
                 <div>
 {/* =======================================================LOGIN==================================================================== */}
-                  <form  className={signInType == "Login" ? 'hidden' : "space-y-6"}
+                  <form  className={signInType == "Login" ?  "space-y-6" : 'hidden' }
                   onSubmit={() => LoginnWithEmailAndPassword(userData)} 
                   >
                     <div>
@@ -97,13 +97,13 @@ export default function LoginForms() {
                       >
                         Sign in
                       </button>
-                      <div className="text-sm leading-6" onClick={() => setSignInType("Login")}>
-                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >New here? Create Account</a>
+                      <div className="text-sm leading-6 pointer" onClick={() => setSignInType("Register")}>
+                      <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500 " >New here? Create Account</a>
                       </div>
                   </form>
                 </div>
 {/* =============================================================REGISTER================================================================================= */}
-              <form className={signInType == "Register" ?  'hidden' : "space-y-6"} 
+              <form className={signInType == "Register" ? "space-y-6" : 'hidden' } 
                onSubmit={() => CreateUserAccount(userData)}
               >
                 <div>
@@ -205,7 +205,7 @@ export default function LoginForms() {
                   >
                     SignUp
                   </button>
-                  <div className="text-sm leading-6" onClick={() => setSignInType("Register")}>
+                  <div className="text-sm leading-6" onClick={() => setSignInType("Login")}>
                       <a className="font-semibold leading-4 text-indigo-600 hover:text-indigo-500" >Have an Account? Sign In</a>
                       </div>
                 </div>

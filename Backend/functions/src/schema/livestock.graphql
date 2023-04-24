@@ -5,6 +5,6 @@ type Livestock {
     type: String!
     quantity: Int!
     healthStatus: String!
-    location: Location
+    location: String!
     dateCreated: String!
-  }
+}

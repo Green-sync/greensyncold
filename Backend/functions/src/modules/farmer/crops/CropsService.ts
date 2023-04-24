@@ -1,11 +1,10 @@
 import { db } from "../../../utils";
 
 export class CropsService {
-
-    static async addCrop(crop: any) {
+  static async addCrop(crop: any) {
         try {
           
-            await db.collection("Crops").add(crop)
+          await db.collection("Crops").add(crop)
           return {
             message: "Crop details successfully added", success: true,
           };

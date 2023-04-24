@@ -12,14 +12,15 @@ import { useNavigate } from 'react-router-dom';
 
 // const history = useHistory();
 
-const LoginnWithEmailAndPassword = async (data: UserDetails, auth: any) => {
+const LoginnWithEmailAndPassword = async (data: UserDetails) => {
   // {email, password, fullname}
   const navigate = useNavigate();
   try {
     const { email, password } = data;
-    await signInWithEmailAndPassword(auth, email, password);
-
+    const user = await signInWithEmailAndPassword(auth, email, password);
+    if(user){
     navigate('/dashboard');
+    }
     return true;
   } catch (error) {
     console.log(error);
@@ -28,13 +29,17 @@ const LoginnWithEmailAndPassword = async (data: UserDetails, auth: any) => {
 };
 
 // union type
-const SocialLogin = async (provider: SocialProviders,auth:any) => {
+const SocialLogin = async (provider: SocialProviders) => {
   // TODO: implement this method
+  const navigate = useNavigate();
   const providers = {
     google: new GoogleAuthProvider(),
     facebook: new FacebookAuthProvider(),
   }
-  await signInWithPopup(auth, providers[provider as SocialProviders]);
+  const user = await signInWithPopup(auth, providers[provider as SocialProviders]);
+  if (user) {
+    navigate('/dashboard')
+  }
 };
 
 const CreateUserAccount = async (data: UserDetails) => {

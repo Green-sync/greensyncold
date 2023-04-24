@@ -1,6 +1,8 @@
 // import { db } from "../utils";
 
 import { CropsQueryResolver } from "../modules";
+import { WeatherQueryResolver } from "../modules/farmer/weather";
+
 
 // const resolvers = {
 //     Query: {
@@ -127,5 +129,6 @@ import { CropsQueryResolver } from "../modules";
 // }
 
 export const QueryResolvers = {
-    ...CropsQueryResolver
+    ...CropsQueryResolver,
+    ...WeatherQueryResolver
 }

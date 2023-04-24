@@ -1,0 +1,9 @@
+type WeatherData {
+    weatherDataId: ID!
+    farmId: ID!
+    date: String!
+    temperature: Float!
+    humidity: Float!
+    rainfall: Float!
+    windSpeed: Float!
+  }

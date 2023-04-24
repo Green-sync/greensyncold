@@ -1,0 +1,33 @@
+type Crop {
+    cropId: ID!
+    farmId: ID!
+    userId: ID!
+    type: String!
+    stage: String!
+    plantingDate: String!
+    harvestDate: String
+    healthStatus: String!
+    dateCreated: String!
+  }
+input CropInput {
+    farmId: ID
+    userId: ID
+    type: String!
+    stage: String!
+    plantingDate: String!
+    harvestDate: String
+    healthStatus: String!
+}
+type CroRresponse {
+  success: Boolean
+  message: String
+}
+  extend type Query {
+    getCrop: CroRresponse
+  }
+
+  extend type  Mutation {
+    createCrop(crop: CropInput): CroRresponse
+  }
+
+  ## PascalCase

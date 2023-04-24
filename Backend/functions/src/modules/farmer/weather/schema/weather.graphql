@@ -1,0 +1,30 @@
+  type WeatherData {
+    weatherDataId: ID!
+    farmId: ID!
+    date: String!
+    temperature: Float!
+    humidity: Float!
+    rainfall: Float!
+    windSpeed: Float!
+  }
+
+  input WeatherDataInput {
+    weatherDataId: ID!
+    farmId: ID!
+    date: String!
+    temperature: Float!
+    humidity: Float!
+    rainfall: Float!
+    windSpeed: Float!
+  }
+  type WeatherDataRes {
+  success: Boolean
+  message: String
+}
+  extend type Query {
+    getWeatherData: WeatherDataRes
+  }
+
+  extend type  Mutation {
+    createWeatherData(weather: WeatherDataInput): WeatherDataRes
+  }

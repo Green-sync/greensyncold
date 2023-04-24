@@ -1,0 +1,30 @@
+type Livestock {
+    livestockId: ID!
+    farmId: ID!
+    userId: ID!
+    type: String!
+    quantity: Int!
+    healthStatus: String!
+    location: String!
+    dateCreated: String!
+}
+input LivestockInput {
+   farmId: ID
+   userId: ID
+   type: String!
+   quantity: Int!
+   healthStatus: String!
+   location: String!
+   dateCreated: String!
+}
+type LivestockRresponse {
+ success: Boolean
+ message: String
+}
+extend type Query {
+   getStock: LivestockRresponse
+}
+
+extend type  Mutation {
+   createStock(stock: LivestockInput): LivestockRresponse
+}

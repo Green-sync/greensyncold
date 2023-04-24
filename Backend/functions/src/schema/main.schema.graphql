@@ -1,0 +1,26 @@
+type Query {
+
+    getUsers: [User]
+    getUserById(userId: ID!): User
+    getFarms: [Farm]
+    getFarmById(farmId: ID!): Farm
+    getCrops: [Crop]
+    getCropById(cropId: ID!): Crop
+    getLivestock: [Livestock]
+    getLivestockById(livestockId: ID!): Livestock
+    getWeatherData: [WeatherData]
+    getWeatherDataById(weatherDataId: ID!): WeatherData
+    getIoTDevices: [IoTDevice]
+    getIoTDeviceById(deviceId: ID!): IoTDevice
+  }
+
+type Mutation {
+    createUser(email: String!, displayName: String!, profileImageURL: String, role: String!): User
+    createFarm(userId: ID!, name: String!, location: LocationInput!, size: String!, description: String): Farm
+    createCrop(farmId: ID!, userId: ID!, type: String!, stage: String!, plantingDate: String!, harvestDate: String, healthStatus: String!): Crop
+    createLivestock(farmId: ID!, userId: ID!, type: String!, quantity: Int!, healthStatus: String!, location: String): Livestock
+    createWeatherData(farmId: ID!, date: String!, temperature: Float!, humidity: Float!, rainfall: Float!, windSpeed: Float!): WeatherData
+    createIoTDevice(userId: ID!, farmId: ID!, type: String!, location: LocationInput!, data: String!, lastUpdated: String!): IoTDevice
+}
+
+ 

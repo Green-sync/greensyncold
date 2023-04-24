@@ -24,7 +24,7 @@ const auth = getAuth(app)
 const storage = getStorage(app)
 
 export {app, auth, storage};
-if (!env.DEV) {
+if (env.DEV) {
     const auth = getAuth();
     connectAuthEmulator(auth, "http://localhost:9099");
     connectStorageEmulator(storage, "localhost", 9199);

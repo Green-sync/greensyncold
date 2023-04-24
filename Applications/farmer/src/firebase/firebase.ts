@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -7,17 +8,21 @@ import {
 } from "firebase/auth";
 import { SocialProviders, UserDetails } from "./firebaseInterfaces";
 import {auth} from "../utils";
-import firebase from 'firebase/app';
+import { useNavigate } from 'react-router-dom';
 
-// const auth = getAuth();
+// const history = useHistory();
 
 const LoginnWithEmailAndPassword = async (data: UserDetails, auth: any) => {
   // {email, password, fullname}
+  const navigate = useNavigate();
   try {
     const { email, password } = data;
     await signInWithEmailAndPassword(auth, email, password);
+
+    navigate('/dashboard');
     return true;
   } catch (error) {
+    console.log(error);
     return error;
   }
 };
@@ -33,6 +38,7 @@ const SocialLogin = async (provider: SocialProviders,auth:any) => {
 };
 
 const CreateUserAccount = async (data: UserDetails) => {
+  const navigate = useNavigate();
   try {
     const {email, password, firstName, lastName, farmType } = data;
     await createUserWithEmailAndPassword(auth, email, password)
@@ -46,12 +52,15 @@ const CreateUserAccount = async (data: UserDetails) => {
         // databaseRef.set(userData);
 
         // console.log('User signed up:', user);
+        navigate("/dashboard")
       })
       .catch((error) => {
         console.error('Error signing up:', error);
       });
     return true
   } catch (error) {
+    navigate("*")
+    alert("Error signing up")
     return error;
   }
 }

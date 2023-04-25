@@ -22,7 +22,8 @@
   message: String
 }
   extend type Query {
-    getWeatherData: WeatherDataRes
+    getWeatherData: WeatherData
+    getAllWeathersData: [WeatherData]
   }
 
   extend type  Mutation {

@@ -33,7 +33,8 @@ type IotDeviceResponse {
   message: String
 }
 extend type Query {
-  getIoTDevice: IotDeviceResponse
+  getIoTDevice: [IotDevice]
+  getAllIoTDevice: [IotDevice]
 }
 
 extend type Mutation {

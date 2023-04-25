@@ -7,7 +7,9 @@
     "start": "vite --host 0.0.0.0 --port 43000",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "host":"firebase deploy --only hosting:dev-agritech",
+    "host:prod":"firebase deploy --only hosting:prod-agritech"
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",

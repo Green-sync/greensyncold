@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "documentation-101",
     "public": "build",
     "ignore": [
       "firebase.json",

@@ -7,7 +7,7 @@
     "start": "docusaurus start --port 5100 --host 0.0.0.0",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "pages": "docusaurus deploy",
+    "host": "firebase deploy --only hosting:documentation-101",
     "deployer": "pnpm build && firebase deploy --only hosting",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve --port 4300",

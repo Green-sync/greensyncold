@@ -1,6 +1,7 @@
 import { AuthComponentProps } from "./AuthDto"
 
 export const AuthComponent = ({ theme, image,option }: AuthComponentProps) => {
+    console.log(theme,option)
     return <>
         <section>
             <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">

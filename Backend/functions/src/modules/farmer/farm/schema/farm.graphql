@@ -1,11 +1,11 @@
 type Farm {
-    farmId: ID!
-    userId: ID!
-    name: String!
-    location: String!
-    size: Float!
+    farmId: ID
+    userId: ID
+    name: String
+    location: String
+    size: Float
     description: String
-    dateCreated: String!
+    dateCreated: String
 }
 
 input FarmInput {

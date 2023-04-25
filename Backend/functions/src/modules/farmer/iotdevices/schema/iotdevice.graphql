@@ -1,0 +1,44 @@
+type IotDevice {
+  deviceId: ID!
+  userId: ID!
+  farmId: ID!
+  type: String!
+  location: LocationOutput!
+  data: String!
+  lastUpdated: String!
+}
+input IotDeviceInput {
+  deviceId: ID!
+  userId: ID!
+  farmId: ID!
+  type: String!
+  location: Location!
+  data: String!
+  lastUpdated: String!
+}
+
+type LocationOutput {
+  latitude: Float!
+  longitude: Float!
+}
+
+
+input Location {
+  latitude: Float!
+  longitude: Float!
+}
+
+type IotDeviceResponse {
+  success: Boolean
+  message: String
+}
+extend type Query {
+  getIoTDevice: IotDeviceResponse
+}
+
+extend type Mutation {
+  createIotDevice(iotdevice: IotDeviceInput): IotDeviceResponse
+}
+
+## PascalCase
+ 

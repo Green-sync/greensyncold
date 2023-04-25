@@ -1,6 +1,7 @@
 // import { db } from "../utils";
 
 import { CropsQueryResolver } from "../modules";
+import { IotDeviceQueryResolver } from "../modules/farmer/iotdevices";
 
 // const resolvers = {
 //     Query: {
@@ -127,5 +128,6 @@ import { CropsQueryResolver } from "../modules";
 // }
 
 export const QueryResolvers = {
-    ...CropsQueryResolver
+    ...CropsQueryResolver,
+    ...IotDeviceQueryResolver
 }

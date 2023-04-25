@@ -1,0 +1,9 @@
+type IotDevice {
+  deviceId: ID!
+  userId: ID!
+  farmId: ID!
+  type: String!
+  location: Location!
+  data: String!
+  lastUpdated: String!
+}

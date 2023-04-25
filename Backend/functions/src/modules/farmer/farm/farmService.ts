@@ -4,8 +4,7 @@ export class FarmService {
 
     static async addFarm(farm: any) {
         try {
-          
-            await db.collection("Farms").add(farm)
+          await db.collection("Farms").add(farm)
           return {
             message: "Farm details successfully added", success: true,
           };

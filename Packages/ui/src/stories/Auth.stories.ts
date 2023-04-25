@@ -18,3 +18,11 @@ export const Login: Story = {
         option: "login"
     }
 }
+
+export const Register: Story = {
+    args: {
+        theme: "neyo",
+        image: "/vite.svg",
+        option: "register"
+    }
+}

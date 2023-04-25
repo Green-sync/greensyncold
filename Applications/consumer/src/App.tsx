@@ -1,6 +1,9 @@
-import { HomePage } from "./pages"
-
+import {Card} from "@green-sync/ui"
 export const App = () => {
+  const cta = () => {
+
+  }
   return <>
-  <HomePage></HomePage></>
+  <Card image="/images.jpeg" description="Welcome" title="" cta={cta}/>
+  </>
 }
